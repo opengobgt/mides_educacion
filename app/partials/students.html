@@ -1,0 +1,17 @@
+<h3>Estudiantes</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Fecha de nacimiento</th>
+    <th>Genero</th>
+    <th>Beneficio</th>
+  </tr>
+  <tr ng-repeat="student in data.students">
+    <td>{{student.primer_nombre}}</td>
+    <td>{{student.primer_apellido}}</td>
+    <td>{{student.fecha_nacimiento}}</td>
+    <td>{{student.genero}}</td>
+    <td>{{student.beneficio}}</td>
+  </tr>
+</table>

@@ -1,0 +1,21 @@
+<h3>Escuelas</h3>
+<table class="table table-striped">
+  <tr>
+    <th>Nombre</th>
+    <th>Direcci&oacute;n</th>
+    <th>Tel&eacute;fono</th>
+    <th>Nivel</th>
+    <th>Jornada</th>
+    <th>Sector</th>
+    <th>Estado</th>
+  </tr>
+  <tr ng-repeat="school in data.schools">
+    <td>{{school.nombre}}</td>
+    <td>{{school.direccion}}</td>
+    <td>{{school.telefono || 'Sin datos'}}</td>
+    <td>{{school.nivel}}</td>
+    <td>{{school.jornada}}</td>
+    <td>{{school.sector}}</td>
+    <td>{{school.estado}}</td>
+  </tr>
+</table>
