@@ -10,8 +10,11 @@ angular.module('myApp', [
   'myApp.directives',
   'myApp.controllers'
 ]).
-config(['$routeProvider', function($routeProvider) {
+config(['$routeProvider', function($routeProvider) {    
+  $routeProvider.when('/login', {templateUrl: 'partials/login.html', controller: 'LoginCtrl'});
+
   $routeProvider.when('/students', {templateUrl: 'partials/students.html', controller: 'StudentsCtrl'});
   $routeProvider.when('/schools', {templateUrl: 'partials/schools.html', controller: 'SchoolsCtrl'});
-  $routeProvider.otherwise({redirectTo: '/students'});
+
+  $routeProvider.otherwise({redirectTo: '/login'});
 }]);

@@ -14,4 +14,7 @@ angular.module('myApp.controllers', []).
     School.query(function(response){
       $scope.data.schools = response;
     });
+  }])
+  .controller('LoginCtrl', ['$scope', function($scope){
+    $scope.data = {};
   }]);
