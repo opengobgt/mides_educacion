@@ -32,6 +32,12 @@ angular.module('SAE.services', ['ngResource'])
     });
 })
 
+  .factory('Asistencia', function($resource) {
+    return $resource('http://localhost:3000/v1/educacion/estudiantes/:estudiante_id/asistencias', {}, {
+      directSave: {url: 'http://localhost:3000/v1/educacion/asistencias', method: 'POST'}
+    });
+  })
+
   .factory('StudentsBySchool', function($resource) {
     return $resource('http://localhost:3000/v1/educacion/escuelas/:escuela_id/estudiantes.json', {});
   })

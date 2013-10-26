@@ -3,10 +3,12 @@
 
 <div class="status">Entrega Pendiente</div>
 
-<form name="attendance">
+<form novalidate name="attendance">
   <div ng-repeat="student in students">
-    <input type="checkbox" name="estudiante_ids[]" value="{{student.id}}" />
+    <input type="checkbox" name="estudiante_ids[]" ng-model="student.checked" value="{{student.id}}" />
     <input type="hidden" name="" />
     <span>{{student.primer_nombre}} {{student.primer_apellido}}</span>
   </div>
 </form>
+
+<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitAttendance()">Ingresar</button>
