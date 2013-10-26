@@ -99,7 +99,7 @@ angular.module('SAE.controllers', [])
     angular.forEach($scope.students, function(student) {
       console.log(student);
       if (student.checked)
-        nueva_asistencia.estudiantes_ids.push(student);
+        nueva_asistencia.estudiantes_ids.push(student.id);
     })
     Asistencia.directSave(nueva_asistencia);
   };
