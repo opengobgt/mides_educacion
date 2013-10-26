@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en" ng-app="SAE">
   <head>
     <meta charset="utf-8">
     <title>MIDES - Asisto v0.1-alpha</title>
@@ -11,13 +11,11 @@
     <!-- Optional theme -->
     <link rel="stylesheet"  href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
 
-
-
     <link rel="stylesheet" href="css/app.css"/>
     <link rel="stylesheet" href="css/login.css"/>
   </head>
   <body>
-  <!-- Static navbar -->
+    <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
@@ -32,21 +30,15 @@
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/">Inicio</a></li>
             <li><a href="#/students">Estudiantes</a></li>
-            <li><a href="#/schools">Escuelas</a></li>           
+            <li><a href="#/schools">Escuelas</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </div>
 
     <div class="container">
-     
-    <div ng-view></div>
-
-    <div>Angular seed app: v<span app-version></span></div>
-
+      <div ng-view></div>
     </div>
-
-    
 
     <!-- In production use:
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
