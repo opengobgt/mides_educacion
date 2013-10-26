@@ -1,63 +1,17 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" ng-app="SAE">
   <head>
-    <meta charset="utf-8">
-    <title>MIDES - Asisto v0.1-alpha</title>
+    <title>Sistema de Asistencia Escolar | MIDES</title>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-
-    <!-- Optional theme -->
-    <link rel="stylesheet"  href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
-
-    <link rel="stylesheet" href="css/app.css"/>
-    <link rel="stylesheet" href="css/login.css"/>
+    <script src="js/production.js"></script>
+    <link rel="stylesheet" href="css/production.css"/>
   </head>
   <body>
-    <!-- Static navbar -->
-    <div class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Asisto</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#/"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-            <li><a href="#/attendance"><span class="glyphicon glyphicon-saved"></span> Asistencia</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-	    <li><a href="#/setup"><span class="glyphicon glyphicon-cog"></span> Ajustes</a></li>
-	  </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
     <div class="container">
       <div ng-view></div>
     </div>
-
-    <!-- In production use:
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-    -->
-    <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-route.js"></script>
-    <script src="lib/angular/angular-resource.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/services.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/filters.js"></script>
-    <script src="js/directives.js"></script>
-
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-
 
   </body>
 </html>
