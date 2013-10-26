@@ -1,0 +1,11 @@
+<h3>Octubre 24, 2013</h3>
+<p>Seleccione a los alumnos presentes para ingresar su asistencia a clase</p>
+
+<div class="status">Entrega Pendiente</div>
+
+<form name="attendance">
+  <div ng-repeat="student in students">
+    <input type="checkbox" />
+    <span>{{student.primer_nombre}} {{student.primer_apellido}}</span>
+  </div>
+</form>

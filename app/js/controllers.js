@@ -56,12 +56,11 @@ angular.module('SAE.controllers', []).
             $scope.failed = false;
             
             User.isLoggedIn = true;
+            User.id = response.id
             User.nombre = response.nombre;
             User.departamento = response.departamento;
             User.municipio = response.municipio;
             User.escuelas = response.escuelas;
-
-            console.log(User);
 
             $location.path('/setup');
         },
