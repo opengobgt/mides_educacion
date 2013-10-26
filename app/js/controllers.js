@@ -47,12 +47,12 @@ angular.module('SAE.controllers', [])
       $scope.data.schools = response;
     });
   }
-  
+
   $scope.save = function(){
     User.escuelas = [$scope.school];
     User.departamento = $scope.department;
     User.municipio = $scope.town;
-    
+
     $location.path('/attendance');
   }
 }])
@@ -74,16 +74,27 @@ angular.module('SAE.controllers', [])
       User.departamento = response.departamento;
       User.municipio = response.municipio;
       User.escuelas = response.escuelas;
-      
+
       $location.path('/attendance');
     },
     function(response){
-      $scope.failed = true;
+      if ($scope.failed)
+      {
+        $('#login-failure').slideUp();
+        $('#login-failure').slideDown();
+      }
+      else
+        $scope.failed = true;
     })
   }
 }])
 
 .controller('AttendanceCtrl', ['$scope', '$http', 'User', 'StudentsBySchool', 'Asistencia', function($scope, $http, User, StudentsBySchool, Asistencia) {
+  $scope.status = {
+    text: 'Entrega Pendiente',
+    class: 'blood_red'
+  };
+
   // All prereqs
   var current_user = null;
   if (User.isLoggedIn)
@@ -98,6 +109,10 @@ angular.module('SAE.controllers', [])
       student.checked = false;
     });
   });
+
+  $scope.selectStudent = function() {
+    this.student.checked = this.student.checked ? false : true;
+  };
 
   $scope.submitAttendance = function() {
     var grados = [];
@@ -125,5 +140,7 @@ angular.module('SAE.controllers', [])
     });
 
     $http.defaults.headers.post = orig_headers;
+    $scope.status.text = 'Entregado';
+    $scope.status.class = 'happy_green';
   };
 }]);

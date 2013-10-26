@@ -2,10 +2,14 @@
   "name": "angualrjs-seed",
   "description": "A starter project for angular js",
   "devDependencies": {
-        "phantomjs" : "*",
-        "karma" : "*",
-        "karma-junit-reporter" : "*",    
-        "karma-jasmine" : "*",
-        "karma-ng-scenario" : "*"
-    }
+    "phantomjs": "*",
+    "karma": "*",
+    "karma-junit-reporter": "*",
+    "karma-jasmine": "*",
+    "karma-ng-scenario": "*",
+    "grunt": "~0.4.1",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-cssmin": "~0.6.2",
+    "grunt-contrib-watch": "~0.5.3"
+  }
 }
