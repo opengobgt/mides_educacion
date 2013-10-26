@@ -15,5 +15,8 @@ angular.module('myApp.services', ['ngResource'])
     return $resource('http://localhost:3000/v1/educacion/escuelas.json', {});
 }).value('version', '0.1')
   .factory('Sesion', function($resource){      
-    return { $resource('http://localhost:3000/v1/educacion/escuelas.json', {}); }
+      return $resource('http://localhost:3000/v1/sesion', {}, {
+          iniciar: {method: 'POST'}
+      });
 }).value('version', '0.1');
+

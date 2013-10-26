@@ -15,6 +15,15 @@ angular.module('myApp.controllers', []).
       $scope.data.schools = response;
     });
   }])
-  .controller('LoginCtrl', ['$scope', function($scope){
+  .controller('LoginCtrl', ['$scope', 'Sesion', function($scope, Sesion){
     $scope.data = {};
+    $scope.email = '';
+    $scope.password = '';
+    $scope.login = function(){
+        Sesion.iniciar( {email: $scope.email, password: $scope.password}, function(response){
+            console.log( response );
+            $scope.data.usuario = response;
+
+        } )
+    }
   }]);
