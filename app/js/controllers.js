@@ -93,7 +93,7 @@ angular.module('SAE.controllers', [])
 
   $scope.submitAttendance = function() {
     var nueva_asistencia = {};
-    nueva_asistencia.escuela_id = current_user.escuelas[0];
+    nueva_asistencia.escuela_id = current_user.escuelas[0].id;
     nueva_asistencia.usuario_id = current_user.id;
 
     nueva_asistencia.estudiantes_ids = [];
