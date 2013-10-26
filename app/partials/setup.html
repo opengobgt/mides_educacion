@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <title></title>
+    <meta content="">
+    <style></style>
+  </head>
+  <body>
+    <div class="container">
+      <ol class="breadcrumb" ng-show="step != 'department'">
+        <li class="active">{{department.nombre}}</li>
+        <li class="active" ng-show="step == 'school'">{{town.nombre}}</li>
+      </ol>
+      <div id="department-step" ng-show="step == 'department'">
+        <h2>Escoge tu departamento</h2>
+        <div class="form-group">
+          <select class="form-control" id="department" ng-model="department" ng-options="d as d.nombre for d in data.departments" required></select>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="department == ''" ng-click="towns()">Siguiente ></button>
+      </div>
+      <div id="town-step" ng-show="step == 'town'">
+        <h2>Escoge tu municipio</h2>
+        <div class="form-group">
+          <select class="form-control" id="town" ng-model="town" ng-options="t as t.nombre for t in data.towns" required></select>
+        </div>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="town == ''" ng-click="schools()">Siguiente ></button>
+      </div>
+      <div id="school-step" ng-show="step == 'school'">
+        <h2>Escoge tu escuela</h2>
+        <div class="form-group">
+          <select class="form-control" id="school" ng-model="school" ng-options="s as s.nombre for s in data.schools" required></select>
+        </div>
+        <dl class="dl-horizontal" ng-show="school">
+          <dt>Direcci&oacute;n</dt>
+          <dd>{{school.direccion}}</dd>
+          <dt ng-show="school.telefono">Tel&eacute;fono</dt>
+          <dd>{{school.telefono}}</dd>
+          <dt>Nivel</dt>
+          <dd>{{school.nivel}}</dd>
+          <dt>Jornada</dt>
+          <dd>{{school.jornada}}</dd>
+          <dt>Sector</dt>
+          <dd>{{school.sector}}</dd>
+        </dl>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="school == ''" ng-click="">Siguiente ></button>
+      </div>
+    </div>
+  </body>
+</html>
