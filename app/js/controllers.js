@@ -142,5 +142,6 @@ angular.module('SAE.controllers', [])
     $http.defaults.headers.post = orig_headers;
     $scope.status.text = 'Entregado';
     $scope.status.class = 'happy_green';
+    $(window).scrollTop(0);
   };
 }]);
