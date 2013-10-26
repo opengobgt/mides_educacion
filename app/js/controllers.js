@@ -90,6 +90,11 @@ angular.module('SAE.controllers', [])
 }])
 
 .controller('AttendanceCtrl', ['$scope', '$http', 'User', 'StudentsBySchool', 'Asistencia', function($scope, $http, User, StudentsBySchool, Asistencia) {
+  $scope.status = {
+    text: 'Entrega Pendiente',
+    class: 'blood_red'
+  };
+
   // All prereqs
   var current_user = null;
   if (User.isLoggedIn)
@@ -104,6 +109,10 @@ angular.module('SAE.controllers', [])
       student.checked = false;
     });
   });
+
+  $scope.selectStudent = function() {
+    this.student.checked = this.student.checked ? false : true;
+  };
 
   $scope.submitAttendance = function() {
     var grados = [];
@@ -131,5 +140,7 @@ angular.module('SAE.controllers', [])
     });
 
     $http.defaults.headers.post = orig_headers;
+    $scope.status.text = 'Entregado';
+    $scope.status.class = 'happy_green';
   };
 }]);
