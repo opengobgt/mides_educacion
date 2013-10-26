@@ -15,14 +15,14 @@
         <div class="form-group">
           <select class="form-control" id="department" ng-model="department" ng-options="d as d.nombre for d in data.departments" required></select>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="department == ''" ng-click="towns()">Siguiente ></button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="department == ''" ng-click="towns()">Siguiente <span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
       <div id="town-step" ng-show="step == 'town'">
         <h2>Escoge tu municipio</h2>
         <div class="form-group">
           <select class="form-control" id="town" ng-model="town" ng-options="t as t.nombre for t in data.towns" required></select>
         </div>
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="town == ''" ng-click="schools()">Siguiente ></button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="town == ''" ng-click="schools()">Siguiente <span class="glyphicon glyphicon-arrow-right"></span></button>
       </div>
       <div id="school-step" ng-show="step == 'school'">
         <h2>Escoge tu escuela</h2>
@@ -41,7 +41,7 @@
           <dt>Sector</dt>
           <dd>{{school.sector}}</dd>
         </dl>
-        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="school == ''" ng-click="">Siguiente ></button>
+        <button type="button" class="btn btn-primary btn-lg btn-block" ng-disabled="school == ''" ng-click="save()"><span class="glyphicon glyphicon-save"></span> Guardar</button>
       </div>
     </div>
   </body>
