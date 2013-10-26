@@ -107,8 +107,6 @@ angular.module('SAE.controllers', [])
     $http.defaults.headers.post['Authorization'] = 'Basic ' + window.btoa(current_user.nombre + ':' + current_user.password);
 
     angular.forEach(grados, function(estudiantes_ids, grado) {
-      console.log(grado);
-      console.log(estudiantes_ids);
       var nueva_asistencia = {};
       nueva_asistencia.escuela_id = current_user.escuelas[0].id;
       nueva_asistencia.usuario_id = current_user.id;
