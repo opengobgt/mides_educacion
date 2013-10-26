@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:opengobgt/mides_educacion.git'
 
 set :deploy_to, '/var/www/m.mides.gob.gt'
 set :scm, :git
-set :branch, 'redesign'
+set :branch, 'master'
 
 # set :format, :pretty
 # set :log_level, :debug
