@@ -87,6 +87,12 @@ input[type="submit"] {
             animation: alert 1s ease forwards;
 }
 
+/* Brought over from login.css */
+img.logo {
+   width: 100%;
+   margin: 2.5em 0 3.5em;
+}
+
 /* Start of actual styles */
 h1.title { margin-bottom: 5em }
 
