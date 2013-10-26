@@ -30,6 +30,7 @@
 }
 
 /* Global styles */
+body { background: #FFFFFF url('../img/bg_pattern.png'); }
 body,
 .pure-g-r [class *= "pure-u"] {
   font: 20px/28px 'Helvetica Neue', Helvetica, Arial, sans-serif;
