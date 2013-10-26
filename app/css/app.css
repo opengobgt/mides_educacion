@@ -28,3 +28,31 @@
   content: "";
   padding: 0;
 }
+
+/* Global styles */
+body,
+.pure-g-r [class *= "pure-u"] {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 90%;
+  max-width: 767px;
+}
+
+h1, h2, h3 {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.reset_margins { margin: 0 }
+
+/* Helpers */
+.centered { text-align: center }
+.mides_blue { color: #004A7F }
+
+@media (max-width: 500px) {
+  body { font-size: 16px; }
+}

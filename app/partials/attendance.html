@@ -7,7 +7,7 @@
   <div ng-repeat="student in students">
     <input type="checkbox" name="estudiante_ids[]" ng-model="student.checked" value="{{student.id}}" />
     <input type="hidden" name="" />
-    <span>{{student.primer_nombre}} {{student.primer_apellido}}</span>
+    <span>{{student.primer_nombre | lowercase | capitalize }} {{student.primer_apellido | lowercase | capitalize }}</span>
   </div>
 </form>
 
