@@ -2,14 +2,14 @@
 
 /* Controllers */
 
-angular.module('myApp.controllers', []).
-  controller('StudentsCtrl', ['$scope', 'Student', function($scope, Student){
+angular.module('SAE.controllers', []).
+  controller('StudentsCtrl', ['$scope', 'Student', function($scope, Student) {
     $scope.data = {};
     Student.query(function(response){
       $scope.data.students = response;
     });
   }])
-  .controller('SchoolsCtrl', ['$scope', 'School', function($scope, School){
+  .controller('SchoolsCtrl', ['$scope', 'School', function($scope, School) {
     $scope.data = {};
     School.query(function(response){
       $scope.data.schools = response;
@@ -30,4 +30,6 @@ angular.module('myApp.controllers', []).
             $scope.failed = true;
         })
     }
+  }])
+  .controller('AttendanceCtrl', ['$scope', function($scope, Attendance) {
   }]);
