@@ -70,5 +70,12 @@ angular.module('SAE.controllers', []).
         })
     }
   }])
-  .controller('AttendanceCtrl', ['$scope', function($scope, Attendance) {
+  .controller('AttendanceCtrl', ['$scope', 'StudentsBySchool', function($scope, StudentsBySchool) {
+     var current_user = { id: 5, schools: ['16-03-0025-43']};
+     // Make request for Teacher which will get associated school and students
+     var students = [];
+     angular.forEach(current_user.schools, function(escuela_id) {
+       students[escuela_id] = StudentsBySchool.query({escuela_id: escuela_id})
+     })
+     $scope.students = students[0];
   }]);
