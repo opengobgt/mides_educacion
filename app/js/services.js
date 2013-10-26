@@ -38,10 +38,12 @@ angular.module('SAE.services', ['ngResource'])
   .factory('User', function() {
      return {
           isLoggedIn: false,
+          id: 0,
           nombre: '',
           departamento: {},
           municipio: [],
-          escuelas: []
+          escuelas: [],
+          escuela: {}
       };
 }).value('version', '0.1')
 ;
