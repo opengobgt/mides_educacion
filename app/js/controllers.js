@@ -111,7 +111,7 @@ angular.module('SAE.controllers', [])
   });
 
   $scope.selectStudent = function(student, $event) {
-    student.checked = student.checked ? false : true;
+    this.student.checked = this.student.checked ? false : true;
 
     if ($event.stopPropagation) $event.stopPropagation();
     if ($event.preventDefault) $event.preventDefault();
