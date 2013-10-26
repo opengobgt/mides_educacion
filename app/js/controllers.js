@@ -80,10 +80,11 @@ angular.module('SAE.controllers', [])
   if (User.isLoggedIn)
     var current_user = User;
   else
-    var current_user = { id: 5, escuelas: ['16-03-0025-43']};
+    var current_user = { id: 5, escuelas: [{id: '16-03-0025-43'}]};
+  console.log(current_user.escuelas[0]);
 
   // Assume only one school for now
-  StudentsBySchool.query({escuela_id: current_user.escuelas[0]}, function(student_list) {
+  StudentsBySchool.query({escuela_id: current_user.escuelas[0].id}, function(student_list) {
     $scope.students = student_list;
     angular.forEach($scope.students, function(student) {
       student.checked = false;
@@ -97,7 +98,6 @@ angular.module('SAE.controllers', [])
 
     nueva_asistencia.estudiantes_ids = [];
     angular.forEach($scope.students, function(student) {
-      console.log(student);
       if (student.checked)
         nueva_asistencia.estudiantes_ids.push(student.id);
     })
