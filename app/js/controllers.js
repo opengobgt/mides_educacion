@@ -47,12 +47,12 @@ angular.module('SAE.controllers', [])
       $scope.data.schools = response;
     });
   }
-  
+
   $scope.save = function(){
     User.escuelas = [$scope.school];
     User.departamento = $scope.department;
     User.municipio = $scope.town;
-    
+
     $location.path('/attendance');
   }
 }])
@@ -74,7 +74,7 @@ angular.module('SAE.controllers', [])
       User.departamento = response.departamento;
       User.municipio = response.municipio;
       User.escuelas = response.escuelas;
-      
+
       $location.path('/attendance');
     },
     function(response){
