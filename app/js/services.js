@@ -47,6 +47,7 @@ angular.module('SAE.services', ['ngResource'])
           isLoggedIn: false,
           id: 0,
           nombre: '',
+          password: '',
           departamento: {},
           municipio: [],
           escuelas: [],
