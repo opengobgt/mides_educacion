@@ -41,7 +41,7 @@ angular.module('SAE.controllers', []).
       });
     }
   }])
-  .controller('LoginCtrl', ['$scope', 'Sesion', function($scope, Sesion){
+  .controller('LoginCtrl', ['$scope', 'Sesion', '$location', function($scope, Sesion, $location){
     $scope.data = {};
     $scope.email = '';
     $scope.password = '';
@@ -51,6 +51,7 @@ angular.module('SAE.controllers', []).
             console.log( response );
             $scope.data.usuario = response;
             $scope.failed = false;
+            $location.path('/setup');
         },
         function(response){
             $scope.failed = true;
