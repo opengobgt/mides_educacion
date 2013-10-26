@@ -110,8 +110,13 @@ angular.module('SAE.controllers', [])
     });
   });
 
-  $scope.selectStudent = function() {
+  $scope.selectStudent = function(student, $event) {
     this.student.checked = this.student.checked ? false : true;
+
+    if ($event.stopPropagation) $event.stopPropagation();
+    if ($event.preventDefault) $event.preventDefault();
+    $event.cancelBubble = true;
+    $event.returnValue = false;
   };
 
   $scope.submitAttendance = function() {

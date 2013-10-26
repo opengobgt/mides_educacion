@@ -5,8 +5,8 @@
 <div class="status centered {{status.class}}" >{{status.text}}</div>
 
 <form name="attendance" class="pure-g-r" novalidate>
-  <div class="student pure-u-1" ng-class="{success: student.checked}" ng-click="selectStudent()" ng-repeat="student in students">
-    <input type="checkbox" name="estudiante_ids[]" ng-model="student.checked" value="{{student.id}}" />
+  <div class="student pure-u-1" ng-class="{success: student.checked}" ng-click="selectStudent(student, $event)" ng-repeat="student in students">
+    <input type="checkbox" name="estudiante_ids[]" ng-click="selectStudent(student, $event)" ng-checked="student.checked" value="{{student.id}}" />
     <input type="hidden" name="" />
     <span class="mides_blue">{{student.primer_nombre | lowercase | capitalize }} {{student.primer_apellido | lowercase | capitalize }}</span>
   </div>
