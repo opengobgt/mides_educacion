@@ -78,7 +78,13 @@ angular.module('SAE.controllers', [])
       $location.path('/attendance');
     },
     function(response){
-      $scope.failed = true;
+      if ($scope.failed)
+      {
+        $('#login-failure').slideUp();
+        $('#login-failure').slideDown();
+      }
+      else
+        $scope.failed = true;
     })
   }
 }])
