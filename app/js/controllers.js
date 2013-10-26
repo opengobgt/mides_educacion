@@ -81,7 +81,7 @@ angular.module('SAE.controllers', [])
   if (User.isLoggedIn)
     var current_user = User;
   else
-    var current_user = { id: 5, escuelas: [{id: '16-03-0025-43'}], nombre: 'Bono', password: 'PruebaPass'};
+    var current_user = { id: 1, escuelas: [{id: '16-03-0025-43'}], nombre: 'Bono', password: 'PassPrueba'};
 
   // Assume only one school for now
   StudentsBySchool.query({escuela_id: current_user.escuelas[0].id}, function(student_list) {
@@ -92,23 +92,32 @@ angular.module('SAE.controllers', [])
   });
 
   $scope.submitAttendance = function() {
-    var nueva_asistencia = {};
-    nueva_asistencia.escuela_id = current_user.escuelas[0].id;
-    nueva_asistencia.usuario_id = current_user.id;
-
-    nueva_asistencia.estudiantes_ids = [];
+    var grados = [];
     angular.forEach($scope.students, function(student) {
       if (student.checked)
-        nueva_asistencia.estudiantes_ids.push(student.id);
+      {
+        if (!(student.grado in grados))
+          grados[student.grado] = [];
+        grados[student.grado].push(student.id);
+      }
     })
-    console.log(current_user.nombre);
-    console.log(window.btoa(current_user.nombre));
-    console.log(current_user.password);
-    console.log(window.btoa(current_user.password));
+
     var orig_headers = $http.defaults.headers.post;
     $http.defaults.headers.post['Access-Control-Request-Headers'] = "accept, origin, authorization";
     $http.defaults.headers.post['Authorization'] = 'Basic ' + window.btoa(current_user.nombre + ':' + current_user.password);
-    Asistencia.directSave(nueva_asistencia);
+
+    angular.forEach(grados, function(estudiantes_ids, grado) {
+      console.log(grado);
+      console.log(estudiantes_ids);
+      var nueva_asistencia = {};
+      nueva_asistencia.escuela_id = current_user.escuelas[0].id;
+      nueva_asistencia.usuario_id = current_user.id;
+
+      nueva_asistencia.grado = grado;
+      nueva_asistencia.estudiantes_ids = estudiantes_ids;
+      Asistencia.directSave(nueva_asistencia);
+    });
+
     $http.defaults.headers.post = orig_headers;
   };
 }]);

@@ -34,7 +34,7 @@ angular.module('SAE.services', ['ngResource'])
 
   .factory('Asistencia', function($resource) {
     return $resource('http://localhost:3000/v1/educacion/estudiantes/:estudiante_id/asistencias', {}, {
-      directSave: {url: 'http://localhost:3000/v1/educacion/asistencias', method: 'POST'}
+      directSave: {url: 'http://localhost:3000/v1/educacion/asistencias', method: 'POST', isArray: true}
     });
   })
 
