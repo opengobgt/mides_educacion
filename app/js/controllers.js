@@ -19,11 +19,15 @@ angular.module('myApp.controllers', []).
     $scope.data = {};
     $scope.email = '';
     $scope.password = '';
+    $scope.failed = false;
     $scope.login = function(){
         Sesion.iniciar( {email: $scope.email, password: $scope.password}, function(response){
             console.log( response );
             $scope.data.usuario = response;
-
-        } )
+            $scope.failed = false;
+        },
+        function(response){
+            $scope.failed = true;
+        })
     }
   }]);
