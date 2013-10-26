@@ -33,5 +33,16 @@ angular.module('SAE.services', ['ngResource'])
 }).value('version', '0.1')
 
   .factory('Attendance', function($resource) {
-}).value('version', '0.1');
+}).value('version', '0.1')
+
+  .factory('User', function() {
+     return {
+          isLoggedIn: false,
+          nombre: '',
+          departamento: {},
+          municipio: [],
+          escuelas: []
+      };
+}).value('version', '0.1')
+;
 

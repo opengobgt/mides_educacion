@@ -15,7 +15,11 @@ angular.module('SAE.controllers', []).
       $scope.data.schools = response;
     });
   }])
-  .controller('SetupCtrl', ['$scope', 'Department', 'Town', function($scope, Department, Town){
+  .controller('SetupCtrl', ['$scope', 'Department', 'Town', 'User', '$location', function($scope, Department, Town, User, $location){
+    if (User.isLoggedIn == false) {
+        $location.path('/login');
+    }
+
     $scope.data = {};
     $scope.department = '';
     $scope.town = '';
@@ -41,16 +45,24 @@ angular.module('SAE.controllers', []).
       });
     }
   }])
-  .controller('LoginCtrl', ['$scope', 'Sesion', '$location', function($scope, Sesion, $location){
+  .controller('LoginCtrl', ['$scope', 'Sesion', '$location', 'User', function($scope, Sesion, $location, User){
     $scope.data = {};
     $scope.email = '';
     $scope.password = '';
     $scope.failed = false;
     $scope.login = function(){
-        Sesion.iniciar( {email: $scope.email, password: $scope.password}, function(response){
-            console.log( response );
+        Sesion.iniciar( {email: $scope.email, password: $scope.password}, function(response){          
             $scope.data.usuario = response;
             $scope.failed = false;
+            
+            User.isLoggedIn = true;
+            User.nombre = response.nombre;
+            User.departamento = response.departamento;
+            User.municipio = response.municipio;
+            User.escuelas = response.escuelas;
+
+            console.log(User);
+
             $location.path('/setup');
         },
         function(response){
