@@ -1,14 +1,14 @@
 <img src="img/logo.png" class="logo" alt="Gobierno de Guatemala" />
-<h1 class="mides_blue centered">Sistema de Asistencia Escolar</h1>
+<h1 class="title mides_blue centered">Sistema de Asistencia Escolar</h1>
 <div id="login-failure" class="alert alert-danger" ng-show="failed">
   <strong>Error</strong> Verifique sus credenciales.
 </div>
-<form class="pure-form pure-g form-signin">
-  <input type="text" class="pure-g-1 form-control" placeholder="email@mineduc.gob.gt"
+<form class="pure-form pure-g-r form-signin">
+  <input type="text" class="pure-input-1 form-control" placeholder="email@mineduc.gob.gt"
         ng-model="email"
         required autofocus />
   <input type="password" class="pure-input-1 form-control" placeholder="Contraseña"
         ng-model="password" required />
   <br />
-  <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login()">Ingresar</button>
+  <button class="pure-button pure-button-primary pure-input-1" type="submit" ng-click="login()">Ingresar</button>
 </form>
