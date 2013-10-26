@@ -1,14 +1,14 @@
-<h3>Octubre 24, 2013</h3>
-<p>Seleccione a los alumnos presentes para ingresar su asistencia a clase</p>
+<h2 class="dark_blue">Octubre 24, 2013</h2>
+<hr />
+<p class="mides_blue">Seleccione a los alumnos presentes para ingresar su asistencia a clase</p>
 
-<div class="status">Entrega Pendiente</div>
+<div class="status centered {{status.class}}" >{{status.text}}</div>
 
-<form novalidate name="attendance">
-  <div ng-repeat="student in students">
+<form name="attendance" class="pure-g-r" novalidate>
+  <div class="student pure-u-1" ng-class="{success: student.checked}" ng-click="selectStudent()" ng-repeat="student in students">
     <input type="checkbox" name="estudiante_ids[]" ng-model="student.checked" value="{{student.id}}" />
     <input type="hidden" name="" />
-    <span>{{student.primer_nombre}} {{student.primer_apellido}}</span>
+    <span class="mides_blue">{{student.primer_nombre | lowercase | capitalize }} {{student.primer_apellido | lowercase | capitalize }}</span>
   </div>
+  <button class="pure-button pure-button-primary pure-input-1" type="submit" ng-click="submitAttendance()">Confirmar Atendencia</button>
 </form>
-
-<button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="submitAttendance()">Ingresar</button>
